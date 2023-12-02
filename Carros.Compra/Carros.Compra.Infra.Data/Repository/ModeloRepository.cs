@@ -23,5 +23,10 @@ namespace Carros.Compra.Infra.Data.Repository
         {
             return data.Modelo.Where(p => p.Nome == nome).ToList();
         }
+
+        public bool ExisteModeloParaFabricanteId (long fabricanteId)
+        {
+            return data.Modelo.Where(p => p.FabricanteId == fabricanteId).Any();
+        }
     }
 }

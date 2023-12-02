@@ -17,5 +17,10 @@ namespace Carros.Compra.Infra.Data.Repository
         {
             _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
         }
+
+        public Fabricante ObterPorNome(string nome)
+        {
+            return data.Fabricante.Where(p=> p.Nome == nome).FirstOrDefault();
+        }
     }
 }
