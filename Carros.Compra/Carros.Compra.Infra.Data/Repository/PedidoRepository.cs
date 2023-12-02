@@ -17,5 +17,10 @@ namespace Carros.Compra.Infra.Data.Repository
         {
             _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
         }
+
+        public bool ExistePedidoParaModeloId(long modeloId)
+        {
+            return data.Pedido.Where(p => p.ModeloId == modeloId).Any();
+        }
     }
 }

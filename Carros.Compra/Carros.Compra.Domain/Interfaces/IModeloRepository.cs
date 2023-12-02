@@ -9,5 +9,6 @@ namespace Carros.Compra.Domain.Interfaces
 {
     public interface IModeloRepository : IRepository<Modelo>
     {
+        List<Modelo> ObterModeloPorNome(string nome);
     }
 }

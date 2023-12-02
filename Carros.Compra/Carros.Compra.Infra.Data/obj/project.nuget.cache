@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nWCpqwaOU06LfDw9mkKK5tiyYPqWgiIh4oBTOBmWiMXUbKZG1GjR+M7ajgRyb3jfAra62kxcOkHOFx3cLhcx/Q==",
+  "dgSpecHash": "9UjJ/WnNnmiQuLLxkOZO/LTbShzBdu3CCb2NULBT32YlGISGGBKbIrHyOc0HgJM5wxj0kI2KzuSqoiQC0VIgBA==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\CarrosMicroServices\\Carros.Compra\\Carros.Compra.Infra.Data\\Carros.Compra.Infra.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration\\0.0.4\\extensions.configuration.0.0.4.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration.resolver\\0.0.4\\extensions.configuration.resolver.0.0.4.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration.sources.objects\\0.0.2\\extensions.configuration.sources.objects.0.0.2.nupkg.sha512",

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "pH8XocJx1OGP+LDf0LOFvkRsjhUzMkY+nkY0/l8a/Gkfe1kBDI7aHYZPmq9wRgbclHttMmtUaYhUSYNAqXebaA==",
+  "dgSpecHash": "KPtitm0mxt1qwgbL4OABIzLTMk6PKb+Z7z/w4W3NieYuf4yDnkTD056AZrPx4v6pQVA5EOykIZrprYoNUYwJag==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\CarrosMicroServices\\Carros.Compra\\Carros.Compra.Api\\Carros.Compra.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration\\0.0.4\\extensions.configuration.0.0.4.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration.resolver\\0.0.4\\extensions.configuration.resolver.0.0.4.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\extensions.configuration.sources.objects\\0.0.2\\extensions.configuration.sources.objects.0.0.2.nupkg.sha512",

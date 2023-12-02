@@ -9,5 +9,6 @@ namespace Carros.Compra.Domain.Interfaces
 {
     public interface IPedidoRepository : IRepository<Pedido>
     {
+        bool ExistePedidoParaModeloId(long modeloId);
     }
 }
