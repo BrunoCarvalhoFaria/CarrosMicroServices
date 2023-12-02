@@ -44,5 +44,10 @@ namespace Carros.Compra.Application.Services
             fabricante.Excluir();
             _fabricanteRepository.Update(fabricante);
         }
+
+        public List<FabricanteDTO> ObterTodosFabricantes()
+        {
+            return _mapper.Map<List<FabricanteDTO>>(_fabricanteRepository.GetAll());
+        }
     }
 }

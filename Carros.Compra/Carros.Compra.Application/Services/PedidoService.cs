@@ -4,6 +4,7 @@ using Carros.Compra.Application.Interfaces;
 using Carros.Compra.Domain.Entities;
 using Carros.Compra.Domain.Enums;
 using Carros.Compra.Domain.Interfaces;
+using Carros.Compra.Infra.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,6 +64,15 @@ namespace Carros.Compra.Application.Services
                 throw new Exception("Pedido já foi processado, exclusão não permitida");
             pedido.Excluir();
             _pedidoRepository.Update(pedido);
+        }
+
+        public RetornoObterTodosPedidosDTO ObterTodosPedidos(long? modeloId, long? fabricanteId, int pagina = 1, int qtdRegistros = 99999)
+        {
+            RetornoObterTodosPedidosDTO retorno = new();
+            var pedidos = _mapper.Map<List<PedidoDTO>>(_pedidoRepository.ObterTodosPedidos(modeloId, fabricanteId));
+            retorno.TotalRegistros = pedidos.Count();
+            retorno.Dados = pedidos.Skip((pagina - 1) * qtdRegistros).Take(qtdRegistros).ToList();
+            return retorno;
         }
     }
 }

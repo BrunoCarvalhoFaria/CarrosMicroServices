@@ -10,5 +10,6 @@ namespace Carros.Compra.Domain.Interfaces
     public interface IPedidoRepository : IRepository<Pedido>
     {
         bool ExistePedidoParaModeloId(long modeloId);
+        List<Pedido> ObterTodosPedidos(long? modeloId, long? fabricanteId);
     }
 }

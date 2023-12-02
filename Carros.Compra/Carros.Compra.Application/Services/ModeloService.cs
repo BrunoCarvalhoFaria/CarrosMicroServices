@@ -59,5 +59,14 @@ namespace Carros.Compra.Application.Services
             modelo.Excluir();
             _modeloRepository.Update(modelo);
         }
+
+        public RetornoObterTodosModelosDTO ObterTodosModelos(long? fabricanteId, int pagina = 1, int qtdRegistros = 9999)
+        {
+            RetornoObterTodosModelosDTO retorno = new();
+            var modelos = _mapper.Map<List<ModeloDTO>>(_modeloRepository.ObterTodosModelos(fabricanteId));
+            retorno.TotalRegistros = modelos.Count();
+            retorno.Dados = modelos.Skip((pagina - 1) * qtdRegistros).Take(qtdRegistros).ToList();
+            return retorno;
+        }
     }
 }

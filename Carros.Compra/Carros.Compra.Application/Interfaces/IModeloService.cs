@@ -12,5 +12,6 @@ namespace Carros.Compra.Application.Interfaces
         long AdicionarModelo(ModeloDTO modelo);
         void AlterarModelo(ModeloDTO modelo);
         void ExcluirModelo(long Id);
+        RetornoObterTodosModelosDTO ObterTodosModelos(long? fabricanteId, int pagina = 1, int qtdRegistros = 9999);
     }
 }
