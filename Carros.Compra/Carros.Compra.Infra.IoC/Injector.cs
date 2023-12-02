@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Carros.Compra.Application.Interfaces;
+using Carros.Compra.Application.Services;
+using Carros.Compra.Domain.Interfaces;
+using Carros.Compra.Infra.Data.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Carros.Compra.Infra.IoC
@@ -9,9 +13,13 @@ namespace Carros.Compra.Infra.IoC
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            //services.AddScoped<ILivroRepository, LivroRepository>();
+            services.AddScoped<IFabricanteRepository, FabricanteRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IModeloRepository, ModeloRepository>();
 
-            //services.AddScoped<IUsuarioAutorizacaoService, UsuarioAutorizacaoService>();
+            services.AddScoped<IFabricanteService, FabricanteService>();
+            services.AddScoped<IModeloService, ModeloService>();
+            services.AddScoped<IPedidoService, PedidoService>();
         }
     }
 }
