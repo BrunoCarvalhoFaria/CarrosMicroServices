@@ -1,0 +1,17 @@
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Application.deps.json
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Application.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Application.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Domain.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Infra.Data.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Domain.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\bin\Debug\net7.0\Carros.Compra.Infra.Data.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.csproj.AssemblyReference.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.AssemblyInfoInputs.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.AssemblyInfo.cs
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.csproj.CoreCompileInputs.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.csproj.CopyComplete
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\refint\Carros.Compra.Application.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\Carros.Compra.Application.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Application\obj\Debug\net7.0\ref\Carros.Compra.Application.dll

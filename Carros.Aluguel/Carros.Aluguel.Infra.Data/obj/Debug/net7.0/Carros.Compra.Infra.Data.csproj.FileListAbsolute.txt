@@ -1,0 +1,15 @@
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\bin\Debug\net7.0\Carros.Compra.Infra.Data.deps.json
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\bin\Debug\net7.0\Carros.Compra.Infra.Data.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\bin\Debug\net7.0\Carros.Compra.Infra.Data.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\bin\Debug\net7.0\Carros.Compra.Domain.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\bin\Debug\net7.0\Carros.Compra.Domain.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.csproj.AssemblyReference.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.AssemblyInfoInputs.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.AssemblyInfo.cs
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.csproj.CopyComplete
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\refint\Carros.Compra.Infra.Data.dll
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\Carros.Compra.Infra.Data.pdb
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Infra.Data\obj\Debug\net7.0\ref\Carros.Compra.Infra.Data.dll
