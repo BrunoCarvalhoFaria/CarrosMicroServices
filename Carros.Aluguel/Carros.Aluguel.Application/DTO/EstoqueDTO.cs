@@ -1,17 +1,15 @@
-﻿using Carros.Aluguel.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Carros.Aluguel.Domain.Entities
+namespace Carros.Aluguel.Application.DTO
 {
-    public class Estoque : Entity<Estoque>
+    public class EstoqueDTO
     {
+        public long Id { get; set; }
         public long ModeloId { get; set; }
         public long Quantidade { get; set; }
-
-        public virtual Modelo Modelo { get; set; }
     }
 }

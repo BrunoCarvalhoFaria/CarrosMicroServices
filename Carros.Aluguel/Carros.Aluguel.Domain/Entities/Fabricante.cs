@@ -10,5 +10,6 @@ namespace Carros.Aluguel.Domain.Entities
     public class Fabricante : Entity<Fabricante>
     {
         public string Nome { get; set; }
+        public ICollection<Modelo> Modelo { get; set; }
     }
 }

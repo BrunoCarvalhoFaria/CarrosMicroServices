@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Carros.Aluguel.Application.Interfaces;
+using Carros.Aluguel.Application.Services;
+using Carros.Aluguel.Domain.Interfaces;
+using Carros.Aluguel.Infra.Data.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Carros.Aluguel.Infra.IoC
@@ -9,9 +13,15 @@ namespace Carros.Aluguel.Infra.IoC
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            //services.AddScoped<ILivroRepository, LivroRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<IFabricanteRepository, FabricanteRepository>();
+            services.AddScoped<IModeloRepository, ModeloRepository>();
 
-            //services.AddScoped<IUsuarioAutorizacaoService, UsuarioAutorizacaoService>();
+            services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IEstoqueService, EstoqueService>();
+            services.AddScoped<IFabricanteService, FabricanteService>();
+            services.AddScoped<IModeloService, ModeloService>();
         }
     }
 }
