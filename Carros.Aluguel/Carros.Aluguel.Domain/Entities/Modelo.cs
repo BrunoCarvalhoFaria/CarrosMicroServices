@@ -15,5 +15,6 @@ namespace Carros.Aluguel.Domain.Entities
 
         public virtual Fabricante Fabricante { get; set; }
         public ICollection<Estoque> Estoque { get; set; }
+        public ICollection<Emprestimo> Emprestimo { get; set; }
     }
 }

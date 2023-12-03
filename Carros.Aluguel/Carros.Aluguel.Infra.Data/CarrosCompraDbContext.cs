@@ -17,6 +17,7 @@ namespace Carros.Aluguel.Infra.Data
         public DbSet<Estoque> Estoque { get; set; }
         public DbSet<Fabricante> Fabricante { get; set; }
         public DbSet<Modelo> Modelo { get; set; }
+        public DbSet<Emprestimo> Emprestimo { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -36,6 +37,7 @@ namespace Carros.Aluguel.Infra.Data
             modelBuilder.AddConfiguration(new EstoqueMapping());
             modelBuilder.AddConfiguration(new FabricanteMapping());
             modelBuilder.AddConfiguration(new ModeloMapping());
+            modelBuilder.AddConfiguration(new EmprestimoMapping());
 
             base.OnModelCreating(modelBuilder);
         }

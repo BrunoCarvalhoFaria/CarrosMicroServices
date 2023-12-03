@@ -11,5 +11,6 @@ namespace Carros.Aluguel.Domain.Entities
     {
         public string Nome { get; set; }
         public string Email { get; set; }
+        public ICollection<Emprestimo> Emprestimo { get; set; }
     }
 }

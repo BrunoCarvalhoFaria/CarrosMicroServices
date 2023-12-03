@@ -17,6 +17,7 @@ namespace Carros.Aluguel.Infra.IoC
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
             services.AddScoped<IFabricanteRepository, FabricanteRepository>();
             services.AddScoped<IModeloRepository, ModeloRepository>();
+            services.AddScoped<IEmprestimoRepository, EmprestimoRepository>();
 
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IEstoqueService, EstoqueService>();
