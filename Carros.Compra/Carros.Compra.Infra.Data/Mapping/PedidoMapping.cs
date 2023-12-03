@@ -12,10 +12,6 @@ namespace Carros.Compra.Infra.Data.Mapping
             builder.ToTable("Pedido");
             builder.HasKey(x => x.Id);
 
-            builder.HasOne(p => p.Fabricante)
-                .WithMany(e => e.Pedido)
-                .HasForeignKey(p => p.FabricanteId);
-
             builder.HasOne(p => p.Modelo)
                 .WithMany(e => e.Pedido)
                 .HasForeignKey(p => p.ModeloId);

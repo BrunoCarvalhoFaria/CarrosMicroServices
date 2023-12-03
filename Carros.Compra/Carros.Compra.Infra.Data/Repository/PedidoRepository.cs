@@ -23,10 +23,9 @@ namespace Carros.Compra.Infra.Data.Repository
             return data.Pedido.Where(p => p.ModeloId == modeloId && p.Excluido == false).Any();
         }
 
-        public List<Pedido> ObterTodosPedidos(long? modeloId, long? fabricanteId)
+        public List<Pedido> ObterTodosPedidos(long? modeloId)
         {
-            return data.Pedido.Where(p => (fabricanteId != null ? (p.FabricanteId == fabricanteId) : true)
-                                            && (modeloId != null ? (p.ModeloId == modeloId) : true)
+            return data.Pedido.Where(p => (modeloId != null ? (p.ModeloId == modeloId) : true)
                                             && p.Excluido == false).ToList();
         }
     }

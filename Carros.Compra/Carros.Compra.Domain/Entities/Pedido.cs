@@ -10,12 +10,10 @@ namespace Carros.Compra.Domain.Entities
 {
     public class Pedido : Entity<Pedido>
     {
-        public long FabricanteId { get; set; }
         public long ModeloId { get; set; }
         public PedidoStatusEnum Status { get; set; }
         public DateTimeOffset DataInclusao{ get; set; }
 
-        public virtual Fabricante Fabricante { get; set; }
         public virtual Modelo Modelo { get; set; }
     }
 }

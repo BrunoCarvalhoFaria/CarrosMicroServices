@@ -68,10 +68,10 @@ namespace Carros.Compra.Application.Services
             _pedidoRepository.Update(pedido);
         }
 
-        public RetornoObterTodosPedidosDTO ObterTodosPedidos(long? modeloId, long? fabricanteId, int pagina = 1, int qtdRegistros = 99999)
+        public RetornoObterTodosPedidosDTO ObterTodosPedidos(long? modeloId, int pagina = 1, int qtdRegistros = 99999)
         {
             RetornoObterTodosPedidosDTO retorno = new();
-            var pedidos = _mapper.Map<List<PedidoDTO>>(_pedidoRepository.ObterTodosPedidos(modeloId, fabricanteId));
+            var pedidos = _mapper.Map<List<PedidoDTO>>(_pedidoRepository.ObterTodosPedidos(modeloId));
             retorno.TotalRegistros = pedidos.Count();
             retorno.Dados = pedidos.Skip((pagina - 1) * qtdRegistros).Take(qtdRegistros).ToList();
             return retorno;

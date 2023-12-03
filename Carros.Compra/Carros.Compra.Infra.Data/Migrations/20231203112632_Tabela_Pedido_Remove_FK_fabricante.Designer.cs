@@ -3,6 +3,7 @@ using System;
 using Carros.Compra.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Carros.Compra.Infra.Data.Migrations
 {
     [DbContext(typeof(CarrosCompraDbContext))]
-    partial class CarrosCompraDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231203112632_Tabela_Pedido_Remove_FK_fabricante")]
+    partial class Tabela_Pedido_Remove_FK_fabricante
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

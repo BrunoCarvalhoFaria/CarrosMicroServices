@@ -21,10 +21,10 @@ namespace Carros.Compra.Api.Controllers
         }
         [HttpGet]
         [Route("")]
-        public IActionResult ObterTodos(long modeloId, long fabricanteId, int pagina, int qtdRegistros) {
+        public IActionResult ObterTodos(long modeloId, int pagina, int qtdRegistros) {
             try
             {
-                return Ok(_pedidoService.ObterTodosPedidos(modeloId, fabricanteId, pagina, qtdRegistros));
+                return Ok(_pedidoService.ObterTodosPedidos(modeloId, pagina, qtdRegistros));
             }
             catch (Exception ex)
             {
