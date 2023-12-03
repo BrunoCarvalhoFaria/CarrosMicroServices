@@ -1,20 +1,17 @@
-﻿using Carros.Aluguel.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Carros.Aluguel.Domain.Entities
+namespace Carros.Aluguel.Application.DTO
 {
-    public class Emprestimo : Entity<Emprestimo>
+    public class EmprestimoDTO
     {
+        public long Id { get; set; }
         public long ModeloId { get; set; }
         public long ClienteId { get; set; }
         public DateTimeOffset AlugadoEm { get; set; }
         public DateTimeOffset? DevolvidoEm { get; set; }
-
-        public virtual Modelo Modelo { get; set; }
-        public virtual Cliente Cliente { get; set; }
     }
 }

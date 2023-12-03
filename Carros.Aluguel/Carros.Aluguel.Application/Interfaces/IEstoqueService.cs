@@ -8,5 +8,6 @@ namespace Carros.Aluguel.Application.Interfaces
 {
     public interface IEstoqueService
     {
+        void ColocarParaVenda(long estoqueId);
     }
 }

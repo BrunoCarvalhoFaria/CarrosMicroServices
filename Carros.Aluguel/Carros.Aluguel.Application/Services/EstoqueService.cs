@@ -19,5 +19,10 @@ namespace Carros.Aluguel.Application.Services
             _estoqueRepository = estoqueRepository;
             _mapper = mapper;
         }
+
+        public void ColocarParaVenda(long estoqueId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

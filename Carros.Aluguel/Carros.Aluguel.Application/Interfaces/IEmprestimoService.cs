@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Carros.Aluguel.Application.Interfaces
 {
-    public interface IClienteService
+    public interface IEmprestimoService
     {
-        long CadastrarCliente(ClienteDTO clienteDTO);
-        List<ClienteDTO> ObterCLientes();
+        void EmprestarCarro(long estoqueId);
+        void DevolverCarro(long emprestimoId);
+        List<EmprestimoDTO> ObterEmprestimos(bool apenasSemDevolucao);
     }
 }

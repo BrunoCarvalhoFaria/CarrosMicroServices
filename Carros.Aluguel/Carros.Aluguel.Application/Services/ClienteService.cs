@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Carros.Aluguel.Application.DTO;
 using Carros.Aluguel.Application.Interfaces;
 using Carros.Aluguel.Domain.Interfaces;
 using System;
@@ -18,6 +19,16 @@ namespace Carros.Aluguel.Application.Services
         {
             _clienteRepository = clienteRepository;
             _mapper = mapper;
+        }
+
+        public long CadastrarCliente(ClienteDTO clienteDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ClienteDTO> ObterCLientes()
+        {
+            throw new NotImplementedException();
         }
     }
 }
