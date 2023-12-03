@@ -16,14 +16,23 @@ namespace Carros.Compra.Application.Services
     public class PedidoService : IPedidoService
     {
         private readonly IPedidoRepository _pedidoRepository;
+        private readonly IMensagemRepository _mensagemRepository;
+        private readonly IModeloRepository _modeloRepository;
+        private readonly IFabricanteRepository _fabricanteRepository;
         private readonly IMapper _mapper;
         public PedidoService(
             IPedidoRepository pedidoRepository,
+            IMensagemRepository mensagemRepository,
+            IModeloRepository modeloRepository,
+            IFabricanteRepository fabricanteRepository,
             IMapper mapper
             )
         {
             _mapper = mapper;   
             _pedidoRepository = pedidoRepository;
+            _mensagemRepository = mensagemRepository;
+            _modeloRepository = modeloRepository;
+            _fabricanteRepository = fabricanteRepository;
         }
 
         public async Task<long> AdicionarPedido(PedidoDTO pedidoDTO)
@@ -44,6 +53,15 @@ namespace Carros.Compra.Application.Services
                 throw new Exception("Pedido ainda não foi comprado");
             pedido.Status = PedidoStatusEnum.Entregue;
             _pedidoRepository.Update(pedido);
+            var modelo = _modeloRepository.GetById(pedido.ModeloId);
+            var fabricante = _fabricanteRepository.GetById(modelo.FabricanteId);
+            _mensagemRepository.EnviarMensagem(new MensagemCarro
+            {
+                Nome = modelo.Nome,
+                Fabricante = fabricante.Nome,
+                Ano = modelo.Ano
+
+            }, "carro-entregue");
         }
 
         public void EfetuarCompra(long PedidoId)
@@ -68,7 +86,7 @@ namespace Carros.Compra.Application.Services
             _pedidoRepository.Update(pedido);
         }
 
-        public RetornoObterTodosPedidosDTO ObterTodosPedidos(long? modeloId, int pagina = 1, int qtdRegistros = 99999)
+        public RetornoObterTodosPedidosDTO ObterTodosPedidos(long modeloId, int pagina = 1, int qtdRegistros = 99999)
         {
             RetornoObterTodosPedidosDTO retorno = new();
             var pedidos = _mapper.Map<List<PedidoDTO>>(_pedidoRepository.ObterTodosPedidos(modeloId));

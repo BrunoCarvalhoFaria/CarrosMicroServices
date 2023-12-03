@@ -18,8 +18,8 @@ namespace Carros.Aluguel.Infra.Data.Mapping
             builder.HasKey(x => x.Id);
 
             builder.HasOne(p => p.Modelo)
-                .WithMany(e => e.Estoque)
-                .HasForeignKey(p => p.ModeloId);
+                .WithOne(e => e.Estoque)
+                .HasForeignKey<Estoque>(p => p.ModeloId);
 
             builder.Ignore(e => e.ValidationResult);
             builder.Ignore(e => e.CascadeMode);

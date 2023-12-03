@@ -9,5 +9,6 @@ namespace Carros.Aluguel.Domain.Interfaces
 {
     public interface IEstoqueRepository : IRepository<Estoque>
     {
+        Estoque? BuscarPorModeloId(long modeloId);
     }
 }

@@ -8,6 +8,6 @@ namespace Carros.Compra.Application.Interfaces
         void ConfirmarEntrega(long PedidoId);
         Task<long> AdicionarPedido(PedidoDTO pedido);
         void ExcluirPedido(long PedidoId);
-        RetornoObterTodosPedidosDTO ObterTodosPedidos(long? modeloId, int pagina = 1, int qtdRegistros = 99999);
+        RetornoObterTodosPedidosDTO ObterTodosPedidos(long modeloId, int pagina = 1, int qtdRegistros = 99999);
     }
 }

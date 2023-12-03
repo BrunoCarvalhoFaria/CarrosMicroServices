@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Carros.Aluguel.Application.DTO;
 using Carros.Aluguel.Application.Interfaces;
+using Carros.Aluguel.Domain.Entities;
 using Carros.Aluguel.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,14 +22,18 @@ namespace Carros.Aluguel.Application.Services
             _mapper = mapper;
         }
 
-        public long CadastrarCliente(ClienteDTO clienteDTO)
+        public async Task<long> CadastrarCliente(ClienteDTO clienteDTO)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(clienteDTO.Nome) || string.IsNullOrEmpty(clienteDTO.Email))
+                throw new Exception("Dados obrigatórios não preenchidos");
+            var cliente = _mapper.Map<Cliente>(clienteDTO);
+            await _clienteRepository.AddAsync(cliente);
+            return cliente.Id;
         }
 
-        public List<ClienteDTO> ObterCLientes()
+        public List<ClienteDTO> ObterCLientes(string nome, string email)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<ClienteDTO>>(_clienteRepository.ObterTodosClientes(nome, email));
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Carros.Aluguel.Domain.Interfaces
 {
     public interface IEmprestimoRepository : IRepository<Emprestimo>
     {
+        List<Emprestimo> ObterEmprestimos(bool apenasSemDevolucao);
     }
 }

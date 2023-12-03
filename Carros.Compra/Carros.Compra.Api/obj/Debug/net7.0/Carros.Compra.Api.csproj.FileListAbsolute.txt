@@ -80,3 +80,4 @@ C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Api\bin\Debug\net7.0
 C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Api\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Api\obj\Debug\net7.0\Carros.Compra.Api.RazorAssemblyInfo.cache
 C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Api\obj\Debug\net7.0\Carros.Compra.Api.RazorAssemblyInfo.cs
+C:\Projetos\CarrosMicroServices\Carros.Compra\Carros.Compra.Api\bin\Debug\net7.0\RabbitMQ.Client.dll

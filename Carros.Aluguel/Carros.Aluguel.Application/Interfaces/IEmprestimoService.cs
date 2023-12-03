@@ -9,8 +9,8 @@ namespace Carros.Aluguel.Application.Interfaces
 {
     public interface IEmprestimoService
     {
-        void EmprestarCarro(long estoqueId);
-        void DevolverCarro(long emprestimoId);
+        Task<long> EmprestarCarro(long modeloId, long clienteId);
+        void DevolverCarro(long emprestimoId );
         List<EmprestimoDTO> ObterEmprestimos(bool apenasSemDevolucao);
     }
 }

@@ -9,7 +9,7 @@ namespace Carros.Aluguel.Application.Interfaces
 {
     public interface IClienteService
     {
-        long CadastrarCliente(ClienteDTO clienteDTO);
-        List<ClienteDTO> ObterCLientes();
+        Task<long> CadastrarCliente(ClienteDTO clienteDTO);
+        List<ClienteDTO> ObterCLientes(string nome, string email);
     }
 }

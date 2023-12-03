@@ -22,7 +22,13 @@ namespace Carros.Aluguel.Application.Services
 
         public void ColocarParaVenda(long estoqueId)
         {
-            throw new NotImplementedException();
+            var estoque = _estoqueRepository.GetById(estoqueId);
+            if (estoque == null)
+                throw new Exception("Estoque não encontrado");
+            if (estoque.Quantidade == 0)
+                throw new Exception("Produto sem estoque para venda");
+            estoque.Quantidade -= 1;
+            _estoqueRepository.Update(estoque);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Carros.Aluguel.Domain.Interfaces
 {
     public interface IClienteRepository : IRepository<Cliente>
     {
+        List<Cliente> ObterTodosClientes(string nome, string email);
     }
 }

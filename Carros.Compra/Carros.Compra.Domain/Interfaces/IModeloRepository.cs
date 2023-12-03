@@ -11,6 +11,6 @@ namespace Carros.Compra.Domain.Interfaces
     {
         List<Modelo> ObterModeloPorNome(string nome);
         bool ExisteModeloParaFabricanteId(long fabricanteId);
-        List<Modelo> ObterTodosModelos(long? fabricanteId);
+        List<Modelo> ObterTodosModelos(long fabricanteId);
     }
 }

@@ -17,5 +17,9 @@ namespace Carros.Aluguel.Infra.Data.Repository
         {
             _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
         }
+
+        public Estoque? BuscarPorModeloId(long modeloId) {
+            return data.Estoque.Where(p => p.ModeloId == modeloId).FirstOrDefault();
+        }
     }
 }

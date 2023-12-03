@@ -35,7 +35,7 @@ namespace Carros.Compra.Application.Services
             modeloDTO.Nome = modeloDTO.Nome.ToUpper();
             if (_modeloRepository.ObterModeloPorNome(modeloDTO.Nome).Any())
                 throw new Exception("Já existe um modelo cadastrado com esse nome.");
-            if (!_fabricanteRepository.GetById(modeloDTO.FabricanteId).Any())
+            if (_fabricanteRepository.GetById(modeloDTO.FabricanteId) == null)
                 throw new Exception("Fabricante não encontrado");
             var modelo = _mapper.Map<Modelo>(modeloDTO);
             await _modeloRepository.AddAsync(modelo);
@@ -63,7 +63,7 @@ namespace Carros.Compra.Application.Services
             _modeloRepository.Update(modelo);
         }
 
-        public RetornoObterTodosModelosDTO ObterTodosModelos(long? fabricanteId, int pagina = 1, int qtdRegistros = 9999)
+        public RetornoObterTodosModelosDTO ObterTodosModelos(long fabricanteId, int pagina = 1, int qtdRegistros = 9999)
         {
             RetornoObterTodosModelosDTO retorno = new();
             var modelos = _mapper.Map<List<ModeloDTO>>(_modeloRepository.ObterTodosModelos(fabricanteId));

@@ -8,9 +8,9 @@ namespace Carros.Compra.Application.AutoMapper
     public class ApplicationMappingProfile : Profile
     {
         public ApplicationMappingProfile() {
-            CreateMap<ModeloDTO, ModeloDTO>().ReverseMap();
+            CreateMap<ModeloDTO, Modelo>().ReverseMap();
             CreateMap<FabricanteDTO, Fabricante>().ReverseMap();
-            CreateMap<PedidoDTO, PedidoDTO>().ReverseMap();
+            CreateMap<PedidoDTO, Pedido>().ReverseMap();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Carros.Compra.Infra.IoC
             services.AddScoped<IFabricanteRepository, FabricanteRepository>();
             services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IModeloRepository, ModeloRepository>();
+            services.AddScoped<IMensagemRepository, MensagemRepository>();
 
             services.AddScoped<IFabricanteService, FabricanteService>();
             services.AddScoped<IModeloService, ModeloService>();

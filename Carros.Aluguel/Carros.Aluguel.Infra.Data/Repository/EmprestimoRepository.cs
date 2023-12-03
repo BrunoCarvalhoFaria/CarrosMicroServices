@@ -17,5 +17,10 @@ namespace Carros.Aluguel.Infra.Data.Repository
         {
             _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
         }
+
+        public List<Emprestimo> ObterEmprestimos(bool apenasSemDevolucao)
+        {
+            return data.Emprestimo.Where(p => apenasSemDevolucao? (p.DevolvidoEm == null ):true && p.Excluido == false).ToList();
+        }
     }
 }

@@ -33,9 +33,4 @@
     <ProjectReference Include="..\Carros.Aluguel.Infra.IoC\Carros.Aluguel.Infra.IoC.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
-
 </Project>
