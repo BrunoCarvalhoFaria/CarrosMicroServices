@@ -22,12 +22,13 @@ namespace Carros.Compra.Application.Services
             _mapper = mapper;
         }
 
-        public long CadastrarFabricante(FabricanteDTO fabricanteDTO)
+        public async Task<long> CadastrarFabricante(FabricanteDTO fabricanteDTO)
         {
-            if (_fabricanteRepository.ObterPorNome(fabricanteDTO.Nome).Any())
+            fabricanteDTO.Nome = fabricanteDTO.Nome.ToUpper();
+            if (_fabricanteRepository.ObterPorNome(fabricanteDTO.Nome) != null)
                 throw new Exception("Existe um fabricante cadastrado com esse nome");
             var fabricante = _mapper.Map<Fabricante>(fabricanteDTO);
-            _fabricanteRepository.Add(fabricante);
+            await _fabricanteRepository.AddAsync(fabricante);
             return fabricante.Id;
         }
 
@@ -36,6 +37,8 @@ namespace Carros.Compra.Application.Services
             if (_modeloRepository.ExisteModeloParaFabricanteId(id))
                 throw new Exception("Existem Modelos para o fabricante, exclusão não permitida");
             var fabricante = _fabricanteRepository.GetById(id);
+            if (fabricante == null)
+                throw new Exception("Fabricante não encontrado");
             fabricante.Excluir();
             _fabricanteRepository.Update(fabricante);
         }

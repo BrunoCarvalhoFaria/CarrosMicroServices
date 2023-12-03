@@ -37,13 +37,13 @@ namespace Carros.Compra.Api.Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult AdicionarModelo(ModeloPostViewModel modeloPostViewModel)
+        public async Task<IActionResult> AdicionarModelo(ModeloPostViewModel modeloPostViewModel)
         {
             try
             {
                 return Ok(new
                 {
-                    ModeloId = _modeloService.AdicionarModelo(_mapper.Map<ModeloDTO>(modeloPostViewModel))
+                    ModeloId = await _modeloService.AdicionarModelo(_mapper.Map<ModeloDTO>(modeloPostViewModel))
                 });
             }
             catch (Exception ex)

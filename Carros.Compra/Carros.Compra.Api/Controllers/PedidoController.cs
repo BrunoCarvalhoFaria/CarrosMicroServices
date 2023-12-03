@@ -66,13 +66,13 @@ namespace Carros.Compra.Api.Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult AdicionarPedido(PedidoPostViewModel pedidoPostViewModel)
+        public async Task<IActionResult> AdicionarPedido(PedidoPostViewModel pedidoPostViewModel)
         {
             try
             {
                 return Ok(new
                 {
-                 PedidoId = _pedidoService.AdicionarPedido(_mapper.Map<PedidoDTO>(pedidoPostViewModel))
+                 PedidoId = await _pedidoService.AdicionarPedido(_mapper.Map<PedidoDTO>(pedidoPostViewModel))
                 });
             }
             catch (Exception ex)

@@ -21,17 +21,17 @@ namespace Carros.Compra.Infra.Data.Repository
 
         public List<Modelo> ObterModeloPorNome(string nome)
         {
-            return data.Modelo.Where(p => p.Nome == nome).ToList();
+            return data.Modelo.Where(p => p.Nome == nome && p.Excluido == false).ToList();
         }
 
         public bool ExisteModeloParaFabricanteId(long fabricanteId)
         {
-            return data.Modelo.Where(p => p.FabricanteId == fabricanteId).Any();
+            return data.Modelo.Where(p => p.FabricanteId == fabricanteId && p.Excluido == false).Any();
         }
 
         public List<Modelo> ObterTodosModelos(long? fabricanteId)
         {
-            return data.Modelo.Where(p => (fabricanteId != null ? (p.FabricanteId == fabricanteId) : true)).ToList();
+            return data.Modelo.Where(p => (fabricanteId != null ? (p.FabricanteId == fabricanteId) : true) && p.Excluido == false).ToList();
         }
     }
 }

@@ -6,11 +6,12 @@ namespace Carros.Aluguel.Domain.Interfaces
 
     public interface IRepository<TEntity> where TEntity : class
     {
-        Task Add(TEntity Objeto);
-        Task Delete(TEntity Objeto);
+        Task AddAsync(TEntity Objeto);
+        Task DeleteAsync(TEntity Objeto);
         TEntity? GetById(long Id);
         List<TEntity> GetAll();
         void Update(TEntity Objeto);
 
     }
 }
+

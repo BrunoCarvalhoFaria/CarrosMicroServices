@@ -30,14 +30,15 @@ namespace Carros.Compra.Application.Services
             _mapper = mapper;
         }
 
-        public long AdicionarModelo(ModeloDTO modeloDTO)
+        public async Task<long> AdicionarModelo(ModeloDTO modeloDTO)
         {
+            modeloDTO.Nome = modeloDTO.Nome.ToUpper();
             if (_modeloRepository.ObterModeloPorNome(modeloDTO.Nome).Any())
                 throw new Exception("Já existe um modelo cadastrado com esse nome.");
             if (!_fabricanteRepository.GetById(modeloDTO.FabricanteId).Any())
                 throw new Exception("Fabricante não encontrado");
             var modelo = _mapper.Map<Modelo>(modeloDTO);
-            _modeloRepository.Add(modelo);
+            await _modeloRepository.AddAsync(modelo);
             return modelo.Id;
         }
 
@@ -56,6 +57,8 @@ namespace Carros.Compra.Application.Services
             if (_pedidoRepository.ExistePedidoParaModeloId(id))
                 throw new Exception("Existem pediso para esse modelo.");
             var modelo = _modeloRepository.GetById(id);
+            if (modelo == null)
+                throw new Exception("Modelo não encontrado");
             modelo.Excluir();
             _modeloRepository.Update(modelo);
         }

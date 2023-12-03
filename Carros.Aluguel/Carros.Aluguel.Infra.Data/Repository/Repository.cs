@@ -32,7 +32,7 @@ namespace Carros.Aluguel.Infra.Data.Repository
             Excluido = true;
         }
 
-        public async Task Add(TEntity Objeto)
+        public async Task AddAsync(TEntity Objeto)
         {
 
             await data.Set<TEntity>().AddAsync(Objeto);
@@ -40,7 +40,7 @@ namespace Carros.Aluguel.Infra.Data.Repository
 
         }
 
-        public async Task Delete(TEntity Objeto)
+        public async Task DeleteAsync(TEntity Objeto)
         {
             data.Set<TEntity>().Remove(Objeto);
             await data.SaveChangesAsync();
@@ -50,7 +50,7 @@ namespace Carros.Aluguel.Infra.Data.Repository
 
         public List<TEntity> GetAll()
         {
-            return  data.Set<TEntity>().Where(t => t.Excluido == false).ToList();
+            return data.Set<TEntity>().Where(t => t.Excluido == false).ToList();
 
         }
 
@@ -63,18 +63,13 @@ namespace Carros.Aluguel.Infra.Data.Repository
 
         public void Update(TEntity Objeto)
         {
-            try
-            {
-                DetachEntity(Objeto, Objeto.Id);
-                Save();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+
+            DetachEntity(Objeto, Objeto.Id);
+            Save();
+
         }
-         
-     
+
+
 
         protected virtual void Dispose(bool disposing)
         {

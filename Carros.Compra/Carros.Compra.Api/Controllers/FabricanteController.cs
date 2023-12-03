@@ -36,12 +36,12 @@ namespace Carros.Compra.Api.Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult AdicionarFabricante([FromBody] FabricanteViewModel fabricanteViewModel)
+        public async Task<IActionResult> AdicionarFabricante([FromBody] FabricanteViewModel fabricanteViewModel)
         {
             try
             {
                 return Ok(new { 
-                    FabricanteId = _fabricanteService.CadastrarFabricante(_mapper.Map<FabricanteDTO>(fabricanteViewModel)) 
+                    FabricanteId = await _fabricanteService.CadastrarFabricante(_mapper.Map<FabricanteDTO>(fabricanteViewModel)) 
                 });
             }
             catch (Exception ex)

@@ -30,7 +30,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Carros.Aluguel.Application\Carros.Aluguel.Application.csproj" />
     <ProjectReference Include="..\Carros.Aluguel.Domain\Carros.Aluguel.Domain.csproj" />
-    <ProjectReference Include="..\Carros.Aluguel.Infra,IoC\Carros.Aluguel.Infra.IoC.csproj" />
+    <ProjectReference Include="..\Carros.Aluguel.Infra.IoC\Carros.Aluguel.Infra.IoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>

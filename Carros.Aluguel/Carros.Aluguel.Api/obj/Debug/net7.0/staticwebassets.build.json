@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "g1x6FOm+WA0dDpOA6fznHxFUAemnt9v0l6DGD9H+8Mw=",
-  "Source": "Carros.Compra.Api",
-  "BasePath": "_content/Carros.Compra.Api",
+  "Hash": "2hzFr9Q4iFmZLqdEwWLXKt+q6qgtOU7fflYVpSWZPJY=",
+  "Source": "Carros.Aluguel.Api",
+  "BasePath": "_content/Carros.Aluguel.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

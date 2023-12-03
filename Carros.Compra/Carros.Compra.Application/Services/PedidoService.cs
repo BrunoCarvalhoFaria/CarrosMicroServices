@@ -26,12 +26,12 @@ namespace Carros.Compra.Application.Services
             _pedidoRepository = pedidoRepository;
         }
 
-        public long AdicionarPedido(PedidoDTO pedidoDTO)
+        public async Task<long> AdicionarPedido(PedidoDTO pedidoDTO)
         {
             Pedido pedido = _mapper.Map<Pedido>(pedidoDTO);
             pedido.DataInclusao = DateTimeOffset.Now;
             pedido.Status = PedidoStatusEnum.Pendente;
-            _pedidoRepository.Add(pedido);
+            await _pedidoRepository.AddAsync(pedido);
             return pedido.Id;
         }
 
