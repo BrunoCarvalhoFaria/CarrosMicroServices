@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Carros.Compra.Api.props" />
-</Project>

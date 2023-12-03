@@ -3,11 +3,6 @@ using Carros.Compra.Application.DTO;
 using Carros.Compra.Application.Interfaces;
 using Carros.Compra.Domain.Entities;
 using Carros.Compra.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Carros.Compra.Application.Services
 {

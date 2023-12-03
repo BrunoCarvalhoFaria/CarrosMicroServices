@@ -29,6 +29,8 @@ namespace Carros.Compra.Application.Services
         public long AdicionarPedido(PedidoDTO pedidoDTO)
         {
             Pedido pedido = _mapper.Map<Pedido>(pedidoDTO);
+            pedido.DataInclusao = DateTimeOffset.Now;
+            pedido.Status = PedidoStatusEnum.Pendente;
             _pedidoRepository.Add(pedido);
             return pedido.Id;
         }
