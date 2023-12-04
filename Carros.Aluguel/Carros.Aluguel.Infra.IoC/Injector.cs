@@ -18,11 +18,14 @@ namespace Carros.Aluguel.Infra.IoC
             services.AddScoped<IFabricanteRepository, FabricanteRepository>();
             services.AddScoped<IModeloRepository, ModeloRepository>();
             services.AddScoped<IEmprestimoRepository, EmprestimoRepository>();
+            services.AddScoped<IRecebimentoRepository, RecebimentoRepository>();
 
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IEstoqueService, EstoqueService>();
             services.AddScoped<IFabricanteService, FabricanteService>();
             services.AddScoped<IModeloService, ModeloService>();
+            services.AddScoped<IEmprestimoService, EmprestimoService>();
+            services.AddScoped<IRecebimentoService, RecebimentoService>();
         }
     }
 }

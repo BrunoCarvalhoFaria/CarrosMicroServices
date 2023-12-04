@@ -12,15 +12,15 @@ using System.Threading.Tasks;
 
 namespace Carros.Aluguel.Infra.Data.Repository
 {
-    public class MensagemRepository : IMensagemRepository
+    public class RecebimentoRepository : IRecebimentoRepository
     {
         private readonly IConfiguration _configuration;
-        public MensagemRepository(IConfiguration configuration)
+        public RecebimentoRepository(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public void ReceberMensagem(string fila)
+        public void BuscarRecebimentoPendente(string fila)
         {
             var factory = new ConnectionFactory
             {
@@ -46,7 +46,7 @@ namespace Carros.Aluguel.Infra.Data.Repository
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
 
-                MensagemCarro mensagem = JsonSerializer.Deserialize<MensagemCarro>(message);
+                Recebimento mensagem = JsonSerializer.Deserialize<Recebimento>(message);
                                 
             };
             channel.BasicConsume(queue: fila,

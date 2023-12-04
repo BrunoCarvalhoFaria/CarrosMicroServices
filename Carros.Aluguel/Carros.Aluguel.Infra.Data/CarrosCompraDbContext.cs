@@ -38,6 +38,7 @@ namespace Carros.Aluguel.Infra.Data
             modelBuilder.AddConfiguration(new FabricanteMapping());
             modelBuilder.AddConfiguration(new ModeloMapping());
             modelBuilder.AddConfiguration(new EmprestimoMapping());
+            modelBuilder.AddConfiguration(new RecebimentoMapping());
 
             base.OnModelCreating(modelBuilder);
         }

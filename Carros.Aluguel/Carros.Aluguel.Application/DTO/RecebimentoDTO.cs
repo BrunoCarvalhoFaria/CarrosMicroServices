@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Carros.Aluguel.Domain.Entities
+namespace Carros.Aluguel.Application.DTO
 {
-    public class MensagemCarro
+    public class RecebimentoDTO
     {
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Fabricante { get; set; }
         public string Ano { get; set; }
