@@ -51,6 +51,8 @@ namespace Carros.Compra.Application.Services
                 throw new Exception("Pedido não encontrado");
             if(pedido.Status == PedidoStatusEnum.Pendente)
                 throw new Exception("Pedido ainda não foi comprado");
+            if (pedido.Status == PedidoStatusEnum.Entregue)
+                throw new Exception("Pedido já foi entregue");
             pedido.Status = PedidoStatusEnum.Entregue;
             _pedidoRepository.Update(pedido);
             var modelo = _modeloRepository.GetById(pedido.ModeloId);

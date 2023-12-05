@@ -100,7 +100,8 @@ namespace Carros.Aluguel.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ModeloId");
+                    b.HasIndex("ModeloId")
+                        .IsUnique();
 
                     b.ToTable("Estoque", (string)null);
                 });
@@ -156,6 +157,38 @@ namespace Carros.Aluguel.Infra.Data.Migrations
                     b.ToTable("Modelo", (string)null);
                 });
 
+            modelBuilder.Entity("Carros.Aluguel.Domain.Entities.Recebimento", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Ano")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("Excluido")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("ExclusaoData")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Fabricante")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("Pendente")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Recebimento", (string)null);
+                });
+
             modelBuilder.Entity("Carros.Aluguel.Domain.Entities.Emprestimo", b =>
                 {
                     b.HasOne("Carros.Aluguel.Domain.Entities.Cliente", "Cliente")
@@ -178,8 +211,8 @@ namespace Carros.Aluguel.Infra.Data.Migrations
             modelBuilder.Entity("Carros.Aluguel.Domain.Entities.Estoque", b =>
                 {
                     b.HasOne("Carros.Aluguel.Domain.Entities.Modelo", "Modelo")
-                        .WithMany("Estoque")
-                        .HasForeignKey("ModeloId")
+                        .WithOne("Estoque")
+                        .HasForeignKey("Carros.Aluguel.Domain.Entities.Estoque", "ModeloId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -211,7 +244,8 @@ namespace Carros.Aluguel.Infra.Data.Migrations
                 {
                     b.Navigation("Emprestimo");
 
-                    b.Navigation("Estoque");
+                    b.Navigation("Estoque")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

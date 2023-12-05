@@ -17,5 +17,32 @@ namespace Carros.Aluguel.Api.Controllers
             _recebimentoService = recebimentoService;
             _mapper = mapper;
         }
+        [HttpGet]
+        [Route("Pendentes")]
+        public async Task<IActionResult> RecebimentosPendentes()
+        {
+            try
+            {
+                return Ok(await _recebimentoService.RecebimentosPendentes());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut]
+        [Route("EncaminharParaPatio")]
+        public async Task<IActionResult> EncaminharParaPatio(long recebimentoId)
+        {
+            try
+            {
+                await _recebimentoService.EncaminharParaPatio(recebimentoId);
+                return Ok("Carro encaminhado para o pátio com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

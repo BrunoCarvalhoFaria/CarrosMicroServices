@@ -33,7 +33,7 @@ namespace Carros.Compra.Application.Services
         public async Task<long> AdicionarModelo(ModeloDTO modeloDTO)
         {
             modeloDTO.Nome = modeloDTO.Nome.ToUpper();
-            if (_modeloRepository.ObterModeloPorNome(modeloDTO.Nome).Any())
+            if (_modeloRepository.ExisteModelo(modeloDTO.Nome, modeloDTO.Ano))
                 throw new Exception("Já existe um modelo cadastrado com esse nome.");
             if (_fabricanteRepository.GetById(modeloDTO.FabricanteId) == null)
                 throw new Exception("Fabricante não encontrado");

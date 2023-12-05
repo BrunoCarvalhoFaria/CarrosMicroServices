@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\IMensagemRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Enums\" />
   </ItemGroup>
 

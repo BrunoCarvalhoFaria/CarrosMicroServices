@@ -9,7 +9,7 @@ namespace Carros.Compra.Domain.Interfaces
 {
     public interface IModeloRepository : IRepository<Modelo>
     {
-        List<Modelo> ObterModeloPorNome(string nome);
+        bool ExisteModelo(string nome, string ano);
         bool ExisteModeloParaFabricanteId(long fabricanteId);
         List<Modelo> ObterTodosModelos(long fabricanteId);
     }

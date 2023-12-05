@@ -21,7 +21,7 @@ namespace Carros.Aluguel.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult ObterClientes(string nome, string email)
+        public IActionResult ObterClientes(string? nome, string? email)
         {
             try
             {
@@ -33,13 +33,13 @@ namespace Carros.Aluguel.Api.Controllers
             }
         }
         [HttpPost]
-        public IActionResult CadastrarCliente(ClienteViewModel clienteViewModel)
+        public async Task<IActionResult> CadastrarCliente(ClienteViewModel clienteViewModel)
         {
             try
             {
                 return Ok(new
                 {
-                    ClienteId = _clienteService.CadastrarCliente(_mapper.Map<ClienteViewModel, ClienteDTO>(clienteViewModel))
+                    ClienteId = await _clienteService.CadastrarCliente(_mapper.Map<ClienteViewModel, ClienteDTO>(clienteViewModel))
                 });
             }
             catch (Exception ex)

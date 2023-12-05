@@ -18,6 +18,7 @@ namespace Carros.Aluguel.Infra.Data
         public DbSet<Fabricante> Fabricante { get; set; }
         public DbSet<Modelo> Modelo { get; set; }
         public DbSet<Emprestimo> Emprestimo { get; set; }
+        public DbSet<Recebimento> Recebimento { get; set; }    
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

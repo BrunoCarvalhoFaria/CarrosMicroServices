@@ -1,5 +1,6 @@
 ﻿using Carros.Aluguel.Domain.Entities;
 using Carros.Aluguel.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -12,46 +13,23 @@ using System.Threading.Tasks;
 
 namespace Carros.Aluguel.Infra.Data.Repository
 {
-    public class RecebimentoRepository : IRecebimentoRepository
+    public class RecebimentoRepository : Repository<Recebimento>, IRecebimentoRepository
     {
         private readonly IConfiguration _configuration;
-        public RecebimentoRepository(IConfiguration configuration)
+        private readonly DbContextOptions<CarrosCompraDbContext> _optionsBuilder;
+
+        public RecebimentoRepository(IConfiguration configuration, CarrosCompraDbContext context) : base(context)
         {
             _configuration = configuration;
-        }
+            _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
 
-        public void BuscarRecebimentoPendente(string fila)
+        }
+               
+
+        public List<Recebimento> ObterTodosRecebimentosPendentes()
         {
-            var factory = new ConnectionFactory
-            {
-                HostName = _configuration.GetSection("RabbitMQ:HostName").Value,
-                Port = int.Parse(_configuration.GetSection("RabbitMQ:Port").Value),
-                UserName = _configuration.GetSection("RabbitMQ:UserName").Value,
-                Password = _configuration.GetSection("RabbitMQ:Password").Value
-            };
-            using var connection = factory.CreateConnection();
-            using var channel = connection.CreateModel();
-
-            channel.QueueDeclare(queue: "bibliotecaMensagem",
-                                 durable: false,
-                                 exclusive: false,
-                                 autoDelete: false,
-                                 arguments: null);
-
-            Console.WriteLine(" [*] Waiting for messages.");
-
-            var consumer = new EventingBasicConsumer(channel);
-            consumer.Received += (model, ea) =>
-            {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-
-                Recebimento mensagem = JsonSerializer.Deserialize<Recebimento>(message);
-                                
-            };
-            channel.BasicConsume(queue: fila,
-                                 autoAck: true,
-                                 consumer: consumer);
+            return data.Recebimento.Where(p=> p.Pendente == true).ToList();
         }
+
     }
 }

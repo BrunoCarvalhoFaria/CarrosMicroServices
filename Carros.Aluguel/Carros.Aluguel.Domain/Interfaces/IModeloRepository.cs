@@ -9,5 +9,7 @@ namespace Carros.Aluguel.Domain.Interfaces
 {
     public interface IModeloRepository : IRepository<Modelo>
     {
+        bool ExisteModelo(string nome, string ano);
+        Modelo? ObterPorNomeAno(string nome, string ano);
     }
 }

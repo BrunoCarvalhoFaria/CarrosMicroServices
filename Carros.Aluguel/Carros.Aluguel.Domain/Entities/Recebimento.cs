@@ -12,5 +12,6 @@ namespace Carros.Aluguel.Domain.Entities
         public string Nome { get; set; }
         public string Fabricante { get; set; }
         public string Ano { get; set; }
+        public bool Pendente { get; set; }
     }
 }

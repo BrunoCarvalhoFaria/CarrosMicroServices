@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Carros.Aluguel.Domain.Interfaces
 {
-    public interface IRecebimentoRepository
+    public interface IRecebimentoRepository : IRepository<Recebimento>
     {
-        void BuscarRecebimentoPendente(string fila);
+        List<Recebimento> ObterTodosRecebimentosPendentes();
     }
 }

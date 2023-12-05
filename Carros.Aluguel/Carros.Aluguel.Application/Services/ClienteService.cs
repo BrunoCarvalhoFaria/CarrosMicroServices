@@ -31,7 +31,7 @@ namespace Carros.Aluguel.Application.Services
             return cliente.Id;
         }
 
-        public List<ClienteDTO> ObterCLientes(string nome, string email)
+        public List<ClienteDTO> ObterCLientes(string? nome, string? email)
         {
             return _mapper.Map<List<ClienteDTO>>(_clienteRepository.ObterTodosClientes(nome, email));
         }

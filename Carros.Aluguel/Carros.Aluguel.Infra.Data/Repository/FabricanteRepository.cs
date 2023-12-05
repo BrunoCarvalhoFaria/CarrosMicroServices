@@ -17,5 +17,11 @@ namespace Carros.Aluguel.Infra.Data.Repository
         {
             _optionsBuilder = new DbContextOptions<CarrosCompraDbContext>();
         }
+
+        public Fabricante? ObterPorNome(string nome)
+        {
+            var retorno = data.Fabricante.Where(p => p.Nome == nome && p.Excluido == false).FirstOrDefault();
+            return retorno;
+        }
     }
 }

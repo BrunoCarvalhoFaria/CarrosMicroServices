@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Mapping\MensagemMapping.cs" />
+    <Compile Remove="Repository\MensagemRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Carros.Aluguel.Domain\Carros.Aluguel.Domain.csproj" />
   </ItemGroup>
 
